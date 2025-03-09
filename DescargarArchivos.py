@@ -9,9 +9,9 @@ dd=time.strftime("%d")
 
 dia=time.strftime("%A")
 
-directorioBase='Z:\\Jhon\\DatosBVQ\\'
+directorioBase='Z:\\DatosBVQ\\'
 
-rmtree(directorioBase+aaaa+"_"+mm)
+#rmtree(directorioBase+aaaa+"_"+mm+"\\"+aaaa+"_"+mm+"_"+dd)
 
 if not os.path.exists(directorioBase+aaaa+"_"+mm):
     os.mkdir(directorioBase+aaaa+"_"+mm)
@@ -33,47 +33,47 @@ if not os.path.exists(directorioBase+aaaa+"_"+mm+"\\"+aaaa+"_"+mm+"_"+dd):
     os.mkdir(directorioBase+aaaa+"_"+mm+"\\"+aaaa+"_"+mm+"_"+dd+"\\013_PrecioNacionalRentaVariableDiario")
     os.mkdir(directorioBase+aaaa+"_"+mm+"\\"+aaaa+"_"+mm+"_"+dd+"\\014_PrecioNacionalRentaVariableMensual")
     
-    urls = ['https://www.bolsadequito.com/uploads/estadisticas/boletines/informacion-continua/boletin-diario.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/informacion-continua/ofertas-y-demandas.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/informacion-continua/maximos-y-minimos.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/informacion-continua/lista-valores-reporto.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-al-cierre/ecuindex.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-semanales/pulso-semanal.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-semanales/montos-colocados.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-mensuales/pulso-mensual.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-mensuales/informe-bursatil-mensual.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-mensuales/total-negociado-tipo-papel.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-mensuales/analisis-sensibilidad.pdf',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-valores/deuda-publica.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-valores/obligaciones.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-valores/facturas-comerciales.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-valores/valores-genericos.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/emisiones/renta-fija.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/emisiones/renta-variable.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/emisiones/bonos.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/emisiones/facturas-comerciales.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/obligaciones.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/bonos.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/facturas-comerciales.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/notas-credito.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/cetes.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/cupones.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/papel-comercial.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/tbc.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/ocas.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/vtp.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/acciones.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/valores-genericos.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/renta-variable/dividendos.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/renta-variable/indicadores-renta-variable.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/renta-variable/montos-negociados-acciones.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/renta-variable/evolucion-precios-acciones.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/sector-publico/montos-negociados-mensuales.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/boletines/sector-publico/montos-negociados-acumulados.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/valoracion/vector-precios-diario/vector-precios-diario.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/valoracion/vector-precios-mensual/vector-precios-mensual.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/valoracion/pnrv-diario/precio-nacional-renta-variable-diario.xls',
-                   'https://www.bolsadequito.com/uploads/estadisticas/valoracion/pnrv-mensual/precio-nacional-renta-variable-mensual.xls']
+    urls = ['https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-mensuales/analisis-sensibilidad.pdf',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/informacion-continua/boletin-diario.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/informacion-continua/ofertas-y-demandas.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/informacion-continua/maximos-y-minimos.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/informacion-continua/lista-valores-reporto.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-al-cierre/ecuindex.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-semanales/pulso-semanal.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-semanales/montos-colocados.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-mensuales/pulso-mensual.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-mensuales/informe-bursatil-mensual.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-mensuales/total-negociado-tipo-papel.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-valores/deuda-publica.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-valores/obligaciones.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-valores/facturas-comerciales.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/boletines-valores/valores-genericos.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/emisiones/renta-fija.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/emisiones/renta-variable.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/emisiones/bonos.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/emisiones/facturas-comerciales.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/obligaciones.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/bonos.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/facturas-comerciales.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/notas-credito.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/cetes.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/cupones.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/papel-comercial.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/tbc.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/ocas.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/vtp.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/acciones.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/cotizaciones-historicas/valores-genericos.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/renta-variable/dividendos.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/renta-variable/indicadores-renta-variable.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/renta-variable/montos-negociados-acciones.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/renta-variable/evolucion-precios-acciones.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/sector-publico/montos-negociados-mensuales.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/boletines/sector-publico/montos-negociados-acumulados.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/valoracion/vector-precios-diario/vector-precios-diario.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/valoracion/vector-precios-mensual/vector-precios-mensual.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/valoracion/pnrv-diario/precio-nacional-renta-variable-diario.xls',
+            'https://www.bolsadequito.com/uploads/estadisticas/valoracion/pnrv-mensual/precio-nacional-renta-variable-mensual.xls']
             
     for url in urls:
         
@@ -119,8 +119,14 @@ if not os.path.exists(directorioBase+aaaa+"_"+mm+"\\"+aaaa+"_"+mm+"_"+dd):
         pyperclip.copy(directorio)
         os.system("start chrome /incognito "+url)
         time.sleep(2)
-        os.system("pegar.bat")
+        if(ext=='.xls'):
+            print('Pegando...')
+            os.system("pegar.bat")
+        elif(ext=='.pdf'):
+            directorio_auxiliar=directorio
+            continue
         time.sleep(2)
-        os.system("guardar.bat")
+        print('Enviando...')
+        os.system("enviar.bat")
         time.sleep(2)
-        os.system("tskill chrome")
+    pyperclip.copy(directorio_auxiliar)
